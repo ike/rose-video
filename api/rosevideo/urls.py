@@ -8,7 +8,7 @@ from rosevideo.welcome import views as welcomeviews
 
 class RoseVideoDvdRental(routers.APIRootView):
     """
-    This appears where the docstring goes!
+    Rose Video API v1
     """
     pass
 
