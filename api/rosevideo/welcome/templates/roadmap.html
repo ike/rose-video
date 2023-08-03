@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rose Video Roadmap</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'min.css' %}" />
+  </head>
+  <body>
+    <nav class="nav" tabindex="-1" onclick="this.focus()">
+      <div class="container">
+        <a class="pagename" href="/">Rose Video</a>
+        <a href="/v1/">Api Documentation</a>
+        <a class="" href="/forums">Forums</a>
+        <a class="current" href="/roadmap">Roadmap</a>
+      </div>
+    </nav>
+    <div style="width:100%;text-align: center;background: black;">
+      <img src="{% static 'rose-logo.jpg' %}" alt="Rose Video" style="height:20em;">
+      <h3 style="padding-top:2em;padding-bottom:1em;color:white;">It's <i>time</i> to renew!</h3>
+    </div>
+    <div class="container">
+      <div class="msg">
+        <strong>Failing test!</strong>
+        <p>There is a failing test in the test suite. Please <a href="http://localhost:8020">check the status page</a>.</p>
+      </div>
+      <h1>Rose Video: Roadmap</h1>
+
+      <p>
+        This is the roadmap for Rose Video. It is a living document and will be updated as the project progresses.
+      </p>
+      <ul>
+        <li><s>Rental endpoint ensures each inventory item uniquely rented to customer</s></li>
+        <li><s>Create Renewal Token on Rental</s></li>
+        <li><s>Check Renewal Token when rental is renewed</s></li>
+        <li>Ensure new payment is creted when rental is renewed</li>
+        <li>Create profile endpoint for customer with recent rentals</li>
+        <li>Create recommendations endpoint by customer</li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,41 @@
+services:
+  db:
+    image: rosevideo/db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    networks:
+      - db_network
+
+  status:
+    image: rosevideo/status:latest
+    restart: always
+    networks:
+      - api_network
+      - db_network
+    ports:
+      - 8020:8020
+
+  api:
+    image: rosevideo/api
+    build: api
+    command: >
+      bash -c "
+        python manage.py makemigrations &&
+        python manage.py migrate &&
+        python manage.py runserver 0.0.0.0:8000
+      "
+    volumes:
+      - ./api:/app
+    networks:
+      - db_network
+      - api_network
+    ports:
+      - 8000:8000
+    
+networks:
+  db_network:
+  api_network:
+
+volumes:
+  pgdata:
