@@ -23,6 +23,9 @@ router.register(r'payments', dvdviews.PaymentViewSet)
 router.register(r'inventories', dvdviews.InventoryViewSet)
 router.register(r'films', dvdviews.FilmViewSet)
 router.register(r'renewals', dvdviews.RenewalViewSet)
+router.register(r'customers', dvdviews.CustomerViewSet)
+router.register(r'staffs', dvdviews.StaffViewSet)
+router.register(r'stores', dvdviews.StoreViewSet)
 
 urlpatterns = [
     path('', include(welcomeviews)),

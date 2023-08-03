@@ -52,6 +52,30 @@ class InventoryViewSet(viewsets.ModelViewSet):
     serializer_class = InventorySerializer
     permission_classes = (permissions.IsAuthenticated,)
 
+class CustomerViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows customers to be viewed or edited.
+    """
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+class StaffViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows staff to be viewed or edited.
+    """
+    queryset = Staff.objects.all()
+    serializer_class = StaffSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+class StoreViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows stores to be viewed or edited.
+    """
+    queryset = Store.objects.all()
+    serializer_class = StoreSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
 class FilmViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows films to be viewed or edited.
